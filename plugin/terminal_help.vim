@@ -207,9 +207,11 @@ function! TerminalOpen(...)
 	noautocmd windo call s:terminal_view(1)
 	noautocmd call win_gotoid(uid)    " take care of previous window
 	noautocmd call win_gotoid(x)
+	wincmd J
 	if get(g:, 'terminal_fixheight', 0)
 		setlocal winfixheight
 	endif
+	resize 10
 endfunc
 
 
